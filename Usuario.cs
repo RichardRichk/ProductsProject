@@ -19,34 +19,33 @@ namespace ProdutosProjeto
         private Random randNum = new Random();
         List<Usuario> usuarios = new List<Usuario>();
 
-
-        public Usuario()
-        {
-            CadastrarUser();
-        }   
-
         public void CadastrarUser()
         {   
             Usuario NovoUsuario = new Usuario();
 
             Console.WriteLine($"Qual seu nome ?");
-            Nome = Console.ReadLine();
+            NovoUsuario.Nome = Console.ReadLine();
 
             Console.WriteLine($"Qual seu email ?");
-            Email = Console.ReadLine();
+            NovoUsuario.Email = Console.ReadLine();
 
             Console.WriteLine($"Qual sua senha ?");
-            Senha = Console.ReadLine();
+            NovoUsuario.Senha = Console.ReadLine();
 
             Console.Clear();
             Console.WriteLine($"Usuario cadastrado com sucesso!!!");
             Thread.Sleep(1200);
             Console.WriteLine($"");
 
+            NovoUsuario.Codigo = randNum.Next(1000,10000);
+
             Console.WriteLine($"Codigo de cadastro: {Codigo = randNum.Next(1000,10000)}");
             Console.WriteLine($"Data de cadastro: {DataCadastro}");
             
             usuarios.Add(NovoUsuario);
+
+            Thread.Sleep(2000);
+            Console.Clear();
         }
 
         public void DeletarUser()

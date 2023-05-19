@@ -15,7 +15,7 @@ namespace ProdutosProjeto
 
         Random CodigoRandom = new Random();
 
-        List<Marca> marcas = new List<Marca>();
+        public static List<Marca> marcas = new List<Marca>();
 
 
         public void CadastrarMarca()
@@ -36,6 +36,8 @@ namespace ProdutosProjeto
 
             Console.WriteLine($"Codigo de cadastro: {NewMarca.CodigoMarca}");
             Console.WriteLine($"Data de cadastro: {NewMarca.DataCadastro}");
+
+            NewMarca = marcas.Find(x => x.NomeMarca == NewMarca.NomeMarca);
                         
             marcas.Add(NewMarca);
         }

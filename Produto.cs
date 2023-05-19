@@ -13,21 +13,25 @@ namespace ProdutosProjeto
 
         public float Preco { get; set; }
 
-        public DateTime DataCadastro { get; set; }
-
-        public Marca Marca = new Marca(); 
+        public DateTime DataCadastro = DateTime.Now;
 
         public Usuario CadastradoPor { get; set; }
+
+        public Marca Marca = new Marca(); 
 
         List<Produto> listaProdutos = new List<Produto>();
 
 
         public void Cadastrar()
         {
-            //Logica
-            //instanciar objeto
-            //receber os dados e cadastrar nesse objeti
-            //armazenar o objeto na lista
+            Produto NovoProduto = new Produto();
+
+            Console.WriteLine($"Qual o nome do produto ?");
+            NovoProduto.NomeProduto = Console.ReadLine();
+
+            Console.WriteLine($"Qual o preco do produto ?");
+            NovoProduto.Preco = float.Parse(Console.ReadLine());            
+            
         }
 
         public void Listar()
