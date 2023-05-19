@@ -12,24 +12,10 @@ namespace ProdutosProjeto
         Usuario user = new Usuario();
         
         public Login(){
-
-            do{
+            
                 Console.Clear();
 
                 MenuInicial();
-
-                if (Logado)
-                {
-                    GerarMenu();
-                }
-                else
-                {
-                    Console.WriteLine($"Usuario nao cadastrado!!!");
-                    Console.WriteLine($"Voltando para o menu inicial...");
-                    Thread.Sleep(2000);
-                    Console.Clear();                 
-                }
-            }while(user.Email == null || user.Senha == null);
 
         }
         public void login()
@@ -37,7 +23,7 @@ namespace ProdutosProjeto
 
         }
 
-        public void Logar(Usuario usuarios)
+        public void Logar() //Classe usuario -- Verificar
         {
             Console.WriteLine($"Insira seu email:");
             string email = Console.ReadLine();

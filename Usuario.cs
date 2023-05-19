@@ -46,10 +46,26 @@ namespace ProdutosProjeto
 
             Thread.Sleep(2000);
             Console.Clear();
+
+            foreach (var item in usuarios)
+            {
+                Console.WriteLine($"Nome: {item.Nome}");
+                Console.WriteLine($"Email: {item.Email}");
+                Console.WriteLine($"Senha: {item.Senha}");
+                Console.WriteLine($"Codigo: {item.Codigo}");
+                
+                
+                
+            }
         }
 
         public void DeletarUser()
         {
+        }
+
+        public bool verificarCadastro() //Clase login -- Logar
+        {
+
         }
     }
 }
