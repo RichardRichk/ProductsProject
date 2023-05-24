@@ -30,14 +30,32 @@ namespace ProdutosProjeto
             NovoProduto.NomeProduto = Console.ReadLine();
 
             Console.WriteLine($"Qual o preco do produto ?");
-            NovoProduto.Preco = float.Parse(Console.ReadLine());            
+            NovoProduto.Preco = float.Parse(Console.ReadLine()); 
+
+            Console.WriteLine($"Qual o codigo do produto ?");
+            NovoProduto.Codigo = int.Parse(Console.ReadLine());
+                       
+
+            listaProdutos.Add(NovoProduto);
             
         }
 
         public void Listar()
         {
-            //Logica
-            //exibir os objetos cadastrados na lista
+            foreach (var x in listaProdutos)
+            {
+                Console.WriteLine
+                (@$"
+         ==============================================
+                Nome do produto: {x.NomeProduto}
+                Preco do produto: {x.Preco}
+                Codigo do produto: {x.Codigo}
+         ==============================================
+                ");
+            }
+
+            Console.WriteLine($"Tecle (Enter) para continuar:");
+            while(Console.ReadKey().Key != ConsoleKey.Enter );
         }
 
         public void Deletar(int codigo)
